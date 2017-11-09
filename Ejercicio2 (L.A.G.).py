@@ -1,7 +1,8 @@
-def BatallaNaval(mapa, disparos):
+def TraduceMapaABool(mapa):
+
     #post: Traduce el mapa a valores booleanos
-    lista = []
-    lista_de_listas = []
+    mapaLista = []
+    listaDeListas = []
 
     if len(mapa[0]) == len(mapa[1]) == len(mapa[2]) == len(mapa[3]):
 
@@ -10,49 +11,66 @@ def BatallaNaval(mapa, disparos):
             for elemento in cadena:
 
                 if elemento == ".":
-                    lista_de_listas.append(False)
+                    listaDeListas.append(False)
 
                 elif elemento == "b":
-                    lista_de_listas.append(True)
+                    listaDeListas.append(True)
 
         if len(mapa) > 0:
-            len_cadena = len(mapa[0])
+            lenCadena = len(mapa[0])
 
-            for elemento in range(0, len(lista_de_listas), len_cadena):
-                lista += [lista_de_listas[elemento:elemento + len_cadena]]
+            for elemento in range(0, len(listaDeListas), lenCadena):
+                mapaLista += [listaDeListas[elemento:elemento + lenCadena]]
 
-            for i in range(len(disparos)):
-                x = disparos[i][0] - 1
-                y = disparos[i][1] - 1
-                if lista[x][y] is True:
-                    lista[x][y] = False
-            return lista
+            return mapaLista
 
     else:
-        return lista
+        return mapaLista
 
 
+def ChequeaAciertoEnDisparos(mapa, disparos):
 
-def devuelve_columna(lista):
-    lista_posicion_columna = []
-    for i in range(len(lista)):
-        for j in range(len(lista[i])):
-            if lista[i][j] is True:
+    for i in range(len(disparos)):
+
+        x = disparos[i][0] - 1
+        y = disparos[i][1] - 1
+
+        if mapa[x][y] is True:
+
+            mapa[x][y] = False
+    return mapa
+
+
+def devuelveColumna(mapa):
+
+    listaPosicionColumna = []
+
+    for i in range(len(mapa)):
+
+        for j in range(len(mapa[i])):
+
+            if mapa[i][j] is True:
+
                 tupla = (i + 1, j + 1)
-                lista_posicion_columna.append(tupla)
-    return lista_posicion_columna
+                listaPosicionColumna.append(tupla)
 
-def main(varA,varB):
-    return varA(varB)
+    return listaPosicionColumna
 
-#print(devuelve_columna((BatallaNaval(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))))
+print(devuelveColumna(ChequeaAciertoEnDisparos(TraduceMapaABool(["b.b..","b...b",".....","....b"]),[(1,1),(3,4),(1,3),(4,5)])))
 
-#print(BatallaNaval(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
+"""def main(varA,varB):
 
-print(main(BatallaNaval(), devuelve_columna()))
+    posicieons = []
+    return varA(varB)"""
+
+#print(((TraduceMapaABool(["b.b..","b...b",".....","....b"]))))
+
+#print(ChequeaAciertoEnDisparos(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
+
+#print(main(BatallaNaval(), devuelve_columna()))
 
 
-def ejercicio2(var1,var2):
+"""def ejercicio2(var1,var2):
     return main(var1,var2)
 
 posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
@@ -64,5 +82,5 @@ assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["yo","tambien","soy","invalido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b.","....","..bb","b.b"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b..","b...b",".....","....b"],posicionesDeDisparosDePrueba) == [(2,1),(2,5)])
-assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])
+assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])"""
 
