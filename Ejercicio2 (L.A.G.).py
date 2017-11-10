@@ -11,21 +11,21 @@ def TraduceMapaABool(mapa):
             for elemento in cadena:
 
                 if elemento == ".":
-                    listaDeListas.append(False)
+                    mapaLista.append(False)
 
                 elif elemento == "b":
-                    listaDeListas.append(True)
+                    mapaLista.append(True)
 
         if len(mapa) > 0:
             lenCadena = len(mapa[0])
 
-            for elemento in range(0, len(listaDeListas), lenCadena):
-                mapaLista += [listaDeListas[elemento:elemento + lenCadena]]
+            for elemento in range(0, len(mapaLista), lenCadena):
+                listaDeListas += [mapaLista[elemento:elemento + lenCadena]]
 
-            return mapaLista
+            return listaDeListas
 
     else:
-        return mapaLista
+        return listaDeListas
 
 
 def ChequeaAciertoEnDisparos(mapa, disparos):
@@ -56,21 +56,20 @@ def devuelveColumna(mapa):
 
     return listaPosicionColumna
 
-print(devuelveColumna(ChequeaAciertoEnDisparos(TraduceMapaABool(["b.b..","b...b",".....","....b"]),[(1,1),(3,4),(1,3),(4,5)])))
 
-"""def main(varA,varB):
-
-    posicieons = []
-    return varA(varB)"""
-
-#print(((TraduceMapaABool(["b.b..","b...b",".....","....b"]))))
-
-#print(ChequeaAciertoEnDisparos(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
-
-#print(main(BatallaNaval(), devuelve_columna()))
+def main(mapa,disparos):
+    mapa = TraduceMapaABool(mapa)
+    return devuelveColumna(ChequeaAciertoEnDisparos(mapa, disparos))
 
 
-"""def ejercicio2(var1,var2):
+
+print(main(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
+
+
+
+
+
+def ejercicio2(var1,var2):
     return main(var1,var2)
 
 posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
@@ -82,5 +81,5 @@ assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["yo","tambien","soy","invalido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b.","....","..bb","b.b"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b..","b...b",".....","....b"],posicionesDeDisparosDePrueba) == [(2,1),(2,5)])
-assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])"""
+assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])
 
