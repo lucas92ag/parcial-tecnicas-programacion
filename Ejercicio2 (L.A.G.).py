@@ -1,6 +1,8 @@
 def TraduceMapaABool(mapa):
 
+    #pre: Recibe una lista(mapa)
     #post: Traduce el mapa a valores booleanos
+
     mapaLista = []
     listaDeListas = []
 
@@ -30,6 +32,9 @@ def TraduceMapaABool(mapa):
 
 def ChequeaAciertoEnDisparos(mapa, disparos):
 
+    #pre: Recibe el mapa (lista de listas en booleanos) y disparos (coordenadas expresadas en lista de tuplas)
+    #post: Devuelve el mapa reemplazando los True acertados por False.
+
     for i in range(len(disparos)):
 
         x = disparos[i][0] - 1
@@ -41,7 +46,10 @@ def ChequeaAciertoEnDisparos(mapa, disparos):
     return mapa
 
 
-def devuelveColumna(mapa):
+def devuelvePosicionNoAcertada(mapa):
+
+    #pre: Recibe el mapa (lista de listas en booleanos).
+    #post: Devuelve una lista de tuplas con las posiciones que no se acertaron.
 
     listaPosicionColumna = []
 
@@ -58,8 +66,10 @@ def devuelveColumna(mapa):
 
 
 def main(mapa,disparos):
+
+    #if mapa and disp
     mapa = TraduceMapaABool(mapa)
-    return devuelveColumna(ChequeaAciertoEnDisparos(mapa, disparos))
+    return devuelvePosicionNoAcertada(ChequeaAciertoEnDisparos(mapa, disparos))
 
 
 
