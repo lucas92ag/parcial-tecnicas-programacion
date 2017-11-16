@@ -1,6 +1,15 @@
-def cercioraValidezDeMapa(mapa):
+def esMapaValido(mapa):
     if len(mapa) < 1 or type(mapa) != list:
-        return []
+        return False
+    for caracter in mapa:
+        centinela = ""
+        if len(caracter) <= 0 or caracter == " ":
+            centinela += "*"
+            if "*" in centinela:
+                return False
+
+    return True
+
 
 
 
@@ -12,7 +21,6 @@ def TraduceMapaABool(mapa):
     mapaLista = []
     listaDeListas = []
 
-    #if len(mapa[0]) == len(mapa[1]) == len(mapa[2]) == len(mapa[3]):
     for cadena in mapa:
 
         for elemento in cadena:
@@ -73,10 +81,11 @@ def devuelvePosicionNoAcertada(mapa):
 
 def main(mapa,disparos):
 
-    mapa = cercioraValidezDeMapa(mapa)
-    mapa = TraduceMapaABool(mapa)
-    return devuelvePosicionNoAcertada(ChequeaAciertoEnDisparos(mapa, disparos))
+    if esMapaValido(mapa):
+        mapa = TraduceMapaABool(mapa)
+        return devuelvePosicionNoAcertada(ChequeaAciertoEnDisparos(mapa, disparos))
 
+    return []
 
 
 #print(main(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
@@ -91,11 +100,11 @@ def ejercicio2(var1,var2):
 posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
 
 assert (ejercicio2([],posicionesDeDisparosDePrueba) == [])
-"""assert (ejercicio2([""],posicionesDeDisparosDePrueba) == [])
+assert (ejercicio2([""],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["      "],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
+"""assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["yo","tambien","soy","invalido"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b.","....","..bb","b.b"],posicionesDeDisparosDePrueba) == [])
 assert (ejercicio2(["b.b..","b...b",".....","....b"],posicionesDeDisparosDePrueba) == [(2,1),(2,5)])
-assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])"""
+assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)]"""
 
