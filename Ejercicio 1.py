@@ -1,15 +1,19 @@
 def rotaCaracteresDeUnaCadena(cadena):
+
     lista = []
-    if type(cadena) == str and cadena != "" and cadena != "     ":
+    if len(cadena) > 0 and "  " not in cadena:
         lista.append(cadena)
+
         for letra in range(len(cadena)-1):
+
             cadena = cadena[1:] + cadena[0]
             lista.append(cadena)
         return lista
+
     else:
         return lista
 
-print(rotaCaracteresDeUnaCadena("Arnol"))
+print(rotaCaracteresDeUnaCadena("Lucas"))
 
 
 def ejercicio1(var1):
