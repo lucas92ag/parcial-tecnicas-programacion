@@ -1,3 +1,8 @@
+def ligaDeFutbol(lista):
+
+
+
+
 
 """def ejercicio3(var1):
     return suFuncion(var1)

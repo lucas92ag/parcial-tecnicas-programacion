@@ -1,23 +1,23 @@
-def rotaCaracteresDeUnaCadena(cadena):
+def rotaCaracteresDeUnaPalabra(palabra):
 
     lista = []
-    if len(cadena) > 0 and "  " not in cadena:
-        lista.append(cadena)
+    if len(palabra) > 0 and "  " not in palabra:
+        lista.append(palabra)
 
-        for letra in range(len(cadena)-1):
+        for letra in range(len(palabra)-1):
 
-            cadena = cadena[1:] + cadena[0]
-            lista.append(cadena)
+            palabra = palabra[1:] + palabra[0]
+            lista.append(palabra)
         return lista
 
     else:
         return lista
 
-print(rotaCaracteresDeUnaCadena("Lucas"))
+print(rotaCaracteresDeUnaPalabra("Lucas"))
 
 
 def ejercicio1(var1):
-    return rotaCaracteresDeUnaCadena(var1)
+    return rotaCaracteresDeUnaPalabra(var1)
 
 assert (ejercicio1("") == [])
 assert (ejercicio1("     ") == [])

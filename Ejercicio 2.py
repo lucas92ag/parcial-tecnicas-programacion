@@ -51,8 +51,8 @@ def TraduceMapaABool(mapa):
 
         return listaDeListas
 
-    #else:
-        #return listaDeListas
+    else:
+        return listaDeListas
 
 
 def ChequeaAciertoEnDisparos(mapa, disparos):
