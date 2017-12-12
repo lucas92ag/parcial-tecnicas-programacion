@@ -25,4 +25,4 @@ def ejercicio1(var1):
 #assert (ejercicio1("ab") == ['ab','ba'])
 #assert (ejercicio1("paz") == ['paz','azp','zpa'])
 #assert (ejercicio1("so l") == ['so l','o ls',' lso','lso '])
-#assert (ejercicio1("rotar") == ['rotar','otarr','tarro','arrot','rrota'])
+# assert (ejercicio1("rotar") == ['rotar','otarr','tarro','arrot','rrota'])
