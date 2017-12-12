@@ -91,7 +91,7 @@ def devuelvePosicionNoAcertada(mapa):
     return listaPosicionColumna
 
 
-def main(mapa,disparos):
+def devuelveCoordenadasDeBarcosNoHundidos(mapa, disparos):
 
     if esMapaValido(mapa):
         mapa = TraduceMapaABool(mapa)
@@ -100,14 +100,14 @@ def main(mapa,disparos):
     return []
 
 
-print(main(["b.b..","b...b",".....","....b"], [(1,1),(3,4),(1,3),(4,5)]))
+print(devuelveCoordenadasDeBarcosNoHundidos(["b.b..", "b...b", ".....", "....b"], [(1, 1), (3, 4), (1, 3), (4, 5)]))
 
 #print(cercioraValidezDeMapa(["b.b..","b...b",".....","....b"]))
 
 
 
 def ejercicio2(var1,var2):
-    return main(var1,var2)
+    return devuelveCoordenadasDeBarcosNoHundidos(var1, var2)
 
 posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
 
