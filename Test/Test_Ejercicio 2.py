@@ -32,7 +32,7 @@ class Ejercicio2test(unittest.TestCase):
         # Assert
         self.assertTrue(resultado == [])
 
-    def testdevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenaDeCaracteresDiferentesDePuntoOBLargaDeberiaDevolverListaVacia(self):
+    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenaDeCaracteresDiferentesDePuntoOBLargaDeberiaDevolverListaVacia(self):
         # Arrange
         cadenaInvalida = "soy NO valido"
         disparos = [(1, 1), (3, 4), (1, 3), (4, 5)]
@@ -40,3 +40,39 @@ class Ejercicio2test(unittest.TestCase):
         resultado = Ejercicio_2.devuelveCoordenadasDeBarcosNoHundidos(cadenaInvalida, disparos)
         # Assert
         self.assertTrue(resultado == [])
+
+    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenasDeCaracteresDiferentesDePuntoOBLargaDeberiaDevolverListaVacia(self):
+        # Arrange
+        listaDeCadenasInvalidas = ["yo","tambien","soy","invalido"]
+        disparos = [(1, 1), (3, 4), (1, 3), (4, 5)]
+        # Act
+        resultado = Ejercicio_2.devuelveCoordenadasDeBarcosNoHundidos(listaDeCadenasInvalidas, disparos)
+        # Assert
+        self.assertTrue(resultado == [])
+
+    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenasDeDiferentesLenghtDeberiaDevolverListaVacia(self):
+        # Arrange
+        listaDeCadenasConDistintoLenght = ["b.b.","....","..bb","b.b"]
+        disparos = [(1, 1), (3, 4), (1, 3), (4, 5)]
+        # Act
+        resultado = Ejercicio_2.devuelveCoordenadasDeBarcosNoHundidos(listaDeCadenasConDistintoLenght, disparos)
+        # Assert
+        self.assertTrue(resultado == [])
+
+    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeUnMapaValidoDeberiaDevolverListaConBarcosIntactos(self):
+        # Arrange
+        mapaValido = ["b.b..","b...b",".....","....b"]
+        disparos = [(1, 1), (3, 4), (1, 3), (4, 5)]
+        # Act
+        resultado = Ejercicio_2.devuelveCoordenadasDeBarcosNoHundidos(mapaValido, disparos)
+        # Assert
+        self.assertTrue(resultado == [(2, 1), (2, 5)])
+
+    def testDevuelveCoordenadasBarcosNoHundidosRecibeUnMapaValidoYUnaListaDeDisparosVaciaDeberiaDevolverListaConBarcosIntactos(self):
+        # Arrange
+        mapaValido = ["b..","...","..b"]
+        listaDeDisparosVacia = []
+        # Act
+        resultado = Ejercicio_2.devuelveCoordenadasDeBarcosNoHundidos(mapaValido, listaDeDisparosVacia)
+        # Assert
+        self.assertTrue(resultado == [(1, 1), (3, 3)])
