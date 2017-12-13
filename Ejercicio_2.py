@@ -27,9 +27,6 @@ def esMapaValido(mapa):
 
 def TraduceMapaABool(mapa):
 
-    #pre: Recibe una lista(mapa)
-    #post: Traduce el mapa a valores booleanos
-
     mapaLista = []
     listaDeListas = []
 
@@ -100,23 +97,4 @@ def devuelveCoordenadasDeBarcosNoHundidos(mapa, disparos):
     return []
 
 
-print(devuelveCoordenadasDeBarcosNoHundidos(["b.b..", "b...b", ".....", "....b"], [(1, 1), (3, 4), (1, 3), (4, 5)]))
-
-#print(cercioraValidezDeMapa(["b.b..","b...b",".....","....b"]))
-
-
-
-def ejercicio2(var1,var2):
-    return devuelveCoordenadasDeBarcosNoHundidos(var1, var2)
-
-posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
-
-#assert (ejercicio2([],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2([""],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2(["      "],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2(["yo","tambien","soy","invalido"],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2(["b.b.","....","..bb","b.b"],posicionesDeDisparosDePrueba) == [])
-#assert (ejercicio2(["b.b..","b...b",".....","....b"],posicionesDeDisparosDePrueba) == [(2,1),(2,5)])
-#assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])
 
