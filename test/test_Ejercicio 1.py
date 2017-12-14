@@ -19,7 +19,7 @@ class Ejercicio1test(unittest.TestCase):
         # Assert
         self.assertTrue(result == [])
 
-    def testRotaCaracteresDeUnaPalabraRecibeLetraAMinDeveriaDevolverListaConMismaLetra(self):
+    def testRotaCaracteresDeUnaPalabraRecibeUnaLetraDeveriaDevolverListaConMismaLetra(self):
         # Arrange
         cadena = 'a'
         # Act
@@ -27,7 +27,7 @@ class Ejercicio1test(unittest.TestCase):
         # Assert
         self.assertTrue(result == ['a'])
 
-    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeDosCaracteresDeberiaDevolverListaConTodasSusRoraciones(self):
+    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeDosCaracteresDeberiaDevolverListaConDosRotaciones(self):
         # Arrange
         cadena = 'ab'
         # Act
@@ -35,7 +35,7 @@ class Ejercicio1test(unittest.TestCase):
         # Assert
         self.assertTrue(result == ['ab','ba'])
 
-    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeTresCaracteresDeberiaDevolverListaConTodasSusRoraciones(self):
+    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeTresCaracteresDeberiaDevolverListaConTresSusRotaciones(self):
         # Arrange
         cadena = 'paz'
         # Act
@@ -43,7 +43,7 @@ class Ejercicio1test(unittest.TestCase):
         # Assert
         self.assertTrue(result == ['paz','azp','zpa'])
 
-    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeDosCaracteresUnEspacioYUnCaracterDeberiaDevolverListaConTodasSusRoraciones(self):
+    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeDosCaracteresUnEspacioYUnCaracterDeberiaDevolverListaCon4Rotaciones(self):
         # Arrange
         cadena = 'so l'
         # Act
@@ -51,7 +51,7 @@ class Ejercicio1test(unittest.TestCase):
         # Assert
         self.assertTrue(result == ['so l','o ls',' lso','lso '])
 
-    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeCincoCaracteresDeberiaDevolverListaConTodasSusRoraciones(self):
+    def testRotaCaracteresDeUnaPalabraRecibeCadenaDeCincoCaracteresDeberiaDevolverListaCon5Rotaciones(self):
         # Arrange
         cadena = 'rotar'
         # Act

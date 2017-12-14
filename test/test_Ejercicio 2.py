@@ -3,8 +3,6 @@ import Ejercicio_2
 
 class Ejercicio2test(unittest.TestCase):
 
-
-
     def testdevuelveCoordenadasDeBarcosNoHundidosRecibeMapaVaciaDeberiaDevolverUnaListaVacia(self):
         # Arrange
         mapaVacio = []
@@ -50,7 +48,7 @@ class Ejercicio2test(unittest.TestCase):
         # Assert
         self.assertTrue(resultado == [])
 
-    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenasDeDiferentesLenghtDeberiaDevolverListaVacia(self):
+    def testDevuelveCoordenadasDeBarcosNoHundidosRecibeListaConCadenasDeDiferentesLongitudesDeberiaDevolverListaVacia(self):
         # Arrange
         listaDeCadenasConDistintoLenght = ["b.b.","....","..bb","b.b"]
         disparos = [(1, 1), (3, 4), (1, 3), (4, 5)]
